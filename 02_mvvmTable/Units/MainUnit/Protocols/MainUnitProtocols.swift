@@ -13,5 +13,5 @@ protocol MainViewViewModelType {
 }
 
 protocol MainViewType {
-    
+    var vm: MainViewViewModelType! { get set }
 }

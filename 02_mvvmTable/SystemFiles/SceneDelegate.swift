@@ -20,7 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = MainView()
+        
+        let assembler = Assembler()
+        let navigationController = UINavigationController()
+        let router = Router(navigationController: navigationController, assembler: assembler)
+        
+        window?.rootViewController = router.start()
         window?.makeKeyAndVisible()
     }
 

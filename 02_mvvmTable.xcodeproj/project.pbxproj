@@ -19,6 +19,8 @@
 		BF780B9824EA721B00B17710 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF780B9724EA721B00B17710 /* MainViewViewModel.swift */; };
 		BF780B9B24EA72E700B17710 /* MainUnitProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF780B9A24EA72E700B17710 /* MainUnitProtocols.swift */; };
 		BF780B9E24EA74E000B17710 /* MainView_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF780B9D24EA74E000B17710 /* MainView_UI.swift */; };
+		BF780BA324EA7CE900B17710 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF780BA224EA7CE900B17710 /* Router.swift */; };
+		BF780BA524EA7E4100B17710 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF780BA424EA7E4100B17710 /* Assembler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		BF780B9724EA721B00B17710 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 		BF780B9A24EA72E700B17710 /* MainUnitProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUnitProtocols.swift; sourceTree = "<group>"; };
 		BF780B9D24EA74E000B17710 /* MainView_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView_UI.swift; sourceTree = "<group>"; };
+		BF780BA224EA7CE900B17710 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		BF780BA424EA7E4100B17710 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +98,7 @@
 				BF780B8D24EA6A0A00B17710 /* Locator */,
 				BF780B8C24EA69ED00B17710 /* Assembler */,
 				BF780B8B24EA69CE00B17710 /* Router */,
-				BF780B8724EA697800B17710 /* MainUnit */,
+				BF780BA124EA7CD200B17710 /* Units */,
 			);
 			path = 02_mvvmTable;
 			sourceTree = "<group>";
@@ -146,6 +150,7 @@
 		BF780B8B24EA69CE00B17710 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				BF780BA224EA7CE900B17710 /* Router.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 		BF780B8C24EA69ED00B17710 /* Assembler */ = {
 			isa = PBXGroup;
 			children = (
+				BF780BA424EA7E4100B17710 /* Assembler.swift */,
 			);
 			path = Assembler;
 			sourceTree = "<group>";
@@ -224,6 +230,14 @@
 				BF780B7024EA685000B17710 /* LaunchScreen.storyboard */,
 			);
 			path = SystemFiles;
+			sourceTree = "<group>";
+		};
+		BF780BA124EA7CD200B17710 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				BF780B8724EA697800B17710 /* MainUnit */,
+			);
+			path = Units;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,8 +342,10 @@
 			files = (
 				BF780B8F24EA6E2C00B17710 /* Locator.swift in Sources */,
 				BF780B6A24EA684D00B17710 /* MainView.swift in Sources */,
+				BF780BA324EA7CE900B17710 /* Router.swift in Sources */,
 				BF780B9824EA721B00B17710 /* MainViewViewModel.swift in Sources */,
 				BF780B6624EA684D00B17710 /* AppDelegate.swift in Sources */,
+				BF780BA524EA7E4100B17710 /* Assembler.swift in Sources */,
 				BF780B9B24EA72E700B17710 /* MainUnitProtocols.swift in Sources */,
 				BF780B9E24EA74E000B17710 /* MainView_UI.swift in Sources */,
 				BF780B6824EA684D00B17710 /* SceneDelegate.swift in Sources */,

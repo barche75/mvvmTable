@@ -11,7 +11,7 @@ import UIKit
 extension MainView {
     
     override func viewWillLayoutSubviews() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGray6
     }
     
 }
