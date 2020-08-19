@@ -22,20 +22,20 @@ enum MainViewData {
 }
 
 struct User: Decodable {
-    let login: String
-    let id: Int
-    let avatarUrl: String
-    let reposUrl: String
-    let type: String
-    let siteAdmin: Bool
+    let login: String?
+    let id: Int?
+    let avatar_url: String?
+    let repos_url: String?
+    let type: String?
+    let siteAdmin: Bool?
     
-    enum CodingKeys: String, CodingKey {
-        case login
-        case id
-        case avatarUrl = "avatar_url"
-        case reposUrl = "repos_url"
-        case type
-        case siteAdmin = "siteAdmin"
-    }
+//    enum CodingKeys: String, CodingKey {
+//        case login
+//        case id
+//        case avatarUrl = "avatar_url"
+//        case reposUrl = "repos_url"
+//        case type
+//        case siteAdmin = "siteAdmin"
+//    }
 }
 

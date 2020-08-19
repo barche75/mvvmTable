@@ -36,9 +36,11 @@ class MainViewViewModel: MainViewViewModelType {
                 guard let self = self else { return }
                 switch result {
                 case .success(let fetchedUsers):
+                    print("--- success")
                     self.users = fetchedUsers
                     self.mainViewData?(.success)
                 case .failure(let requestError):
+                    print("--- failure")
                     self.mainViewData?(.failure(MainViewData.DataModel(title: "Warning", description: "error", error: requestError)))
                 }
             }
