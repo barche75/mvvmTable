@@ -11,9 +11,15 @@ import Foundation
 protocol LocatorProtocol {
     var network: NetworkServiceProtocol { get set }
     var storage: StorageServiceProtocol { get set }
+    init(network: NetworkServiceProtocol, storage: StorageServiceProtocol)
 }
 
 class Locator: LocatorProtocol {
-    var network: NetworkServiceProtocol = NetworkService()
-    var storage: StorageServiceProtocol = StorageService()
+    var network: NetworkServiceProtocol
+    var storage: StorageServiceProtocol
+    
+    required init(network: NetworkServiceProtocol, storage: StorageServiceProtocol) {
+        self.network = network
+        self.storage = storage
+    }
 }

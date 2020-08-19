@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF3AFA9024EA83D00027642D /* MainViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AFA8F24EA83D00027642D /* MainViewData.swift */; };
 		BF780B6624EA684D00B17710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF780B6524EA684D00B17710 /* AppDelegate.swift */; };
 		BF780B6824EA684D00B17710 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF780B6724EA684D00B17710 /* SceneDelegate.swift */; };
 		BF780B6A24EA684D00B17710 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF780B6924EA684D00B17710 /* MainView.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF3AFA8F24EA83D00027642D /* MainViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewData.swift; sourceTree = "<group>"; };
 		BF780B6224EA684D00B17710 /* 02_mvvmTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 02_mvvmTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF780B6524EA684D00B17710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF780B6724EA684D00B17710 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		BF780B8A24EA69B000B17710 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF3AFA8F24EA83D00027642D /* MainViewData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,16 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				BF780B9D24EA74E000B17710 /* MainView_UI.swift */,
-				BF780B9F24EA757D00B17710 /* States_UI */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		BF780B9F24EA757D00B17710 /* States_UI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = States_UI;
 			sourceTree = "<group>";
 		};
 		BF780BA024EA75B900B17710 /* SystemFiles */ = {
@@ -343,6 +338,7 @@
 				BF780B8F24EA6E2C00B17710 /* Locator.swift in Sources */,
 				BF780B6A24EA684D00B17710 /* MainView.swift in Sources */,
 				BF780BA324EA7CE900B17710 /* Router.swift in Sources */,
+				BF3AFA9024EA83D00027642D /* MainViewData.swift in Sources */,
 				BF780B9824EA721B00B17710 /* MainViewViewModel.swift in Sources */,
 				BF780B6624EA684D00B17710 /* AppDelegate.swift in Sources */,
 				BF780BA524EA7E4100B17710 /* Assembler.swift in Sources */,

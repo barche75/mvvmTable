@@ -9,9 +9,13 @@
 import Foundation
 
 protocol MainViewViewModelType {
+    var mainViewData: ((MainViewData) -> ())? { get set }
+    var router: RouterProtocol { get set }
+    var locator: LocatorProtocol { get set }
     
-}
-
-protocol MainViewType {
-    var vm: MainViewViewModelType! { get set }
+    init(router: RouterProtocol, locator: LocatorProtocol)
+    
+    func numberOfRows() -> Int
+    func getUsers()
+    func tapOnCell(_ indexPath: IndexPath)
 }
