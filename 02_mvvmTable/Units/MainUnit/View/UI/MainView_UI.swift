@@ -12,7 +12,7 @@ extension MainView {
     
     func setupUI() {
         title = "Git users"
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = .white
         let item = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(fetchUsers))
         navigationItem.rightBarButtonItem = item
     }
@@ -47,9 +47,7 @@ extension MainView {
             labelTitle.isHidden = true
             labelDescription.isHidden = true
             activityIndicator.stopAnimating()
-            tableView.performBatchUpdates({
-                tableView.reloadSections([0], with: .left)
-            }, completion: nil)
+            tableView.reloadData()
         }
     }
     
@@ -61,6 +59,7 @@ extension MainView {
         table.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         table.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         table.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        table.separatorStyle = .none
         table.delegate = self
         table.dataSource = self
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
