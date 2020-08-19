@@ -35,7 +35,6 @@ extension MainView {
             labelDescription.isHidden = false
             labelDescription.text = data.description ?? "no description"
             activityIndicator.startAnimating()
-            
         case .failure(let data):
             tableView.isHidden = true
             labelTitle.text = data.title ?? "no title"

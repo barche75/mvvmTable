@@ -28,20 +28,16 @@ class MainViewViewModel: MainViewViewModelType {
     }
     
     func getUsers() {
-        
-        self.mainViewData?(.loading(MainViewData.DataModel(title: "Loading", description: "please wait", error: nil)))
-        
-        DispatchQueue.global().asyncAfter(deadline: .now() + 4) {
+        self.mainViewData?(.loading(MainViewData.DataModel(title: "Loading", description: "please wait")))
+        DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
             self.locator.network.getUsers { [weak self] result in
                 guard let self = self else { return }
                 switch result {
                 case .success(let fetchedUsers):
-                    print("--- success")
                     self.users = fetchedUsers
                     self.mainViewData?(.success)
-                case .failure(let requestError):
-                    print("--- failure")
-                    self.mainViewData?(.failure(MainViewData.DataModel(title: "Warning", description: "error", error: requestError)))
+                case .failure:
+                    self.mainViewData?(.failure(MainViewData.DataModel(title: "Warning", description: "error")))
                 }
             }
         }

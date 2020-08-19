@@ -28,15 +28,18 @@ class MainView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showContent()
-        setupUI()
         tableView.delegate = self
         tableView.dataSource = self
         vm.mainViewData = { [weak self] viewData in
             guard let self = self else { return }
             self.viewData = viewData
         }
-    }    
+    }
+    
+    override func viewWillLayoutSubviews() {
+        showContent()
+        setupUI()
+    }
     
 }
 
