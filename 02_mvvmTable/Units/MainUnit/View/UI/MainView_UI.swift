@@ -40,7 +40,7 @@ extension MainView {
             labelTitle.text = data.title ?? "no title"
             labelTitle.isHidden = false
             labelDescription.isHidden = false
-            labelDescription.text = "\(data.description ?? "no details")\n \(data.error?.localizedDescription ?? "no error description")"
+            labelDescription.text = data.description ?? "no details"
             activityIndicator.stopAnimating()
         case .success:
             tableView.isHidden = false
