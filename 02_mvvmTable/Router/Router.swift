@@ -26,8 +26,9 @@ class Router: RouterProtocol {
     init(navigationController: UINavigationController, assembler: AssemblerProtocol) {
         self.navigationController = navigationController
         self.assembler = assembler
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
     }
     
     func initialView() {

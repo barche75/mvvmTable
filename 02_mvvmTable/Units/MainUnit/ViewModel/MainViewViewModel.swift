@@ -28,8 +28,9 @@ class MainViewViewModel: MainViewViewModelType {
     }
     
     func getUsers() {
-        self.mainViewData?(.loading(MainViewData.DataModel(title: "Loading", description: "please wait")))
-        DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
+        users = []
+        mainViewData?(.loading(MainViewData.DataModel(title: "Loading", description: "please wait")))
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
             self.locator.network.getUsers { [weak self] result in
                 guard let self = self else { return }
                 switch result {

@@ -27,9 +27,9 @@ extension MainView {
             tableView.isHidden = true
             labelTitle.isHidden = true
             labelDescription.isHidden = true
-            activityIndicator.isHidden = true
         case .loading(let data):
             tableView.isHidden = true
+            tableView.reloadData()
             labelTitle.text = data.title ?? "no title"
             labelTitle.isHidden = false
             labelDescription.isHidden = false
@@ -46,7 +46,10 @@ extension MainView {
             tableView.isHidden = false
             labelTitle.isHidden = true
             labelDescription.isHidden = true
-            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
+            tableView.performBatchUpdates({
+                tableView.reloadSections([0], with: .left)
+            }, completion: nil)
         }
     }
     
@@ -58,6 +61,9 @@ extension MainView {
         table.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         table.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         table.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        table.delegate = self
+        table.dataSource = self
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return table
     }
     

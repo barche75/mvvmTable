@@ -28,8 +28,6 @@ class MainView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
         vm.mainViewData = { [weak self] viewData in
             guard let self = self else { return }
             self.viewData = viewData
@@ -49,7 +47,10 @@ extension MainView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = "User"
+        cell.detailTextLabel?.text = "\(indexPath.row)"
         return cell
     }
     
