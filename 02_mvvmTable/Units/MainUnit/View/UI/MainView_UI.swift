@@ -12,37 +12,59 @@ extension MainView {
     
     func setupUI() {
         title = "Git users"
+        view.backgroundColor = .systemGray6
+        let item = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(fetchUsers))
+        navigationItem.rightBarButtonItem = item
     }
     
-    override func viewWillLayoutSubviews() {
+    @objc func fetchUsers() {
+        vm.getUsers()
+    }
+    
+    func showContent() {
         switch viewData {
         case .initial:
-            view.backgroundColor = .systemGray6
-            break
-        case .loading:
-            break
-        case .failure(_):
-            view.backgroundColor = .systemPink
-            break
-        case .success(_):
-            view.backgroundColor = .systemGreen
-            break
+            tableView.isHidden = true
+            labelTitle.isHidden = true
+            labelDescription.isHidden = true
+            activityIndicator.isHidden = true
+        case .loading(let data):
+            tableView.isHidden = true
+            labelTitle.text = data.title ?? "no title"
+            labelTitle.isHidden = false
+            labelDescription.isHidden = false
+            labelDescription.text = data.description ?? "no description"
+            activityIndicator.startAnimating()
+            
+        case .failure(let data):
+            tableView.isHidden = true
+            labelTitle.text = data.title ?? "no title"
+            labelTitle.isHidden = false
+            labelDescription.isHidden = false
+            labelDescription.text = "\(data.description ?? "no details")\n \(data.error?.localizedDescription ?? "no error description")"
+            activityIndicator.stopAnimating()
+        case .success:
+            tableView.isHidden = false
+            labelTitle.isHidden = true
+            labelDescription.isHidden = true
+            activityIndicator.isHidden = true
         }
     }
     
     func makeTableView() -> UITableView {
-        let tableView = UITableView(frame: .zero)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        view.addSubview(tableView)
-        return tableView
+        let table = UITableView(frame: .zero)
+        view.addSubview(table)
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        table.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        table.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        table.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        return table
     }
     
     func makeLabelTitle() -> UILabel {
         let label = UILabel(frame: .zero)
+        view.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 8).isActive = true
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -50,12 +72,12 @@ extension MainView {
         label.textAlignment = .center
         label.numberOfLines = 1
         label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        view.addSubview(label)
         return label
     }
     
     func makeLabelDescription() -> UILabel {
         let label = UILabel(frame: .zero)
+        view.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.topAnchor.constraint(equalToSystemSpacingBelow: labelTitle.bottomAnchor, multiplier: 2).isActive = true
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -63,16 +85,16 @@ extension MainView {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        view.addSubview(label)
         return label
     }
     
     func makeActivityIndicator() -> UIActivityIndicatorView {
         let ai = UIActivityIndicatorView(style: .medium)
+        view.addSubview(ai)
+        ai.translatesAutoresizingMaskIntoConstraints = false
         ai.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         ai.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         ai.hidesWhenStopped = true
-        view.addSubview(ai)
         return ai
     }
     

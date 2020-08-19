@@ -21,14 +21,14 @@ class MainView: UIViewController {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-                self.view.layoutSubviews()
-                print("--- viewData set")
+                self.showContent()
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        showContent()
         setupUI()
         tableView.delegate = self
         tableView.dataSource = self
@@ -36,7 +36,6 @@ class MainView: UIViewController {
             guard let self = self else { return }
             self.viewData = viewData
         }
-        vm.getUsers()
     }    
     
 }

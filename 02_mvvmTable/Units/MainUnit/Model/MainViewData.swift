@@ -10,21 +10,32 @@ import Foundation
 
 enum MainViewData {
     case initial
-    case loading
-    case failure(Error)
-    case success(DataModel)
+    case loading(DataModel)
+    case failure(DataModel)
+    case success
     
     struct DataModel {
-        var users: [User]
+        var title: String?
+        var description: String?
+        var error: Error?
     }
 }
 
-struct User: Codable {
+struct User: Decodable {
     let login: String
     let id: Int
     let avatarUrl: String
     let reposUrl: String
     let type: String
     let siteAdmin: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case login
+        case id
+        case avatarUrl = "avatar_url"
+        case reposUrl = "repos_url"
+        case type
+        case siteAdmin = "siteAdmin"
+    }
 }
 
