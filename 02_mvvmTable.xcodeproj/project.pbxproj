@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		BF3AFA9024EA83D00027642D /* MainViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AFA8F24EA83D00027642D /* MainViewData.swift */; };
+		BF75933724F01AF6005BB9DD /* UserTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75933624F01AF6005BB9DD /* UserTableCell.swift */; };
+		BF75933B24F01B5B005BB9DD /* UserTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75933A24F01B5B005BB9DD /* UserTableCellViewModel.swift */; };
+		BF75933E24F01BB8005BB9DD /* UserTableCellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75933D24F01BB8005BB9DD /* UserTableCellProtocols.swift */; };
+		BF75934024F01FEB005BB9DD /* UserTableCell_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75933F24F01FEB005BB9DD /* UserTableCell_UI.swift */; };
+		BF75934324F02CB6005BB9DD /* UserTableCellViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75934224F02CB6005BB9DD /* UserTableCellViewData.swift */; };
 		BF780B6624EA684D00B17710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF780B6524EA684D00B17710 /* AppDelegate.swift */; };
 		BF780B6824EA684D00B17710 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF780B6724EA684D00B17710 /* SceneDelegate.swift */; };
 		BF780B6A24EA684D00B17710 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF780B6924EA684D00B17710 /* MainView.swift */; };
@@ -36,6 +41,11 @@
 
 /* Begin PBXFileReference section */
 		BF3AFA8F24EA83D00027642D /* MainViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewData.swift; sourceTree = "<group>"; };
+		BF75933624F01AF6005BB9DD /* UserTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableCell.swift; sourceTree = "<group>"; };
+		BF75933A24F01B5B005BB9DD /* UserTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableCellViewModel.swift; sourceTree = "<group>"; };
+		BF75933D24F01BB8005BB9DD /* UserTableCellProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableCellProtocols.swift; sourceTree = "<group>"; };
+		BF75933F24F01FEB005BB9DD /* UserTableCell_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableCell_UI.swift; sourceTree = "<group>"; };
+		BF75934224F02CB6005BB9DD /* UserTableCellViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableCellViewData.swift; sourceTree = "<group>"; };
 		BF780B6224EA684D00B17710 /* 02_mvvmTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 02_mvvmTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF780B6524EA684D00B17710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF780B6724EA684D00B17710 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +84,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF75933824F01B07005BB9DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF75933624F01AF6005BB9DD /* UserTableCell.swift */,
+				BF75933F24F01FEB005BB9DD /* UserTableCell_UI.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF75933924F01B32005BB9DD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BF75933A24F01B5B005BB9DD /* UserTableCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BF75933C24F01B74005BB9DD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BF75933D24F01BB8005BB9DD /* UserTableCellProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BF75934124F02C72005BB9DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF75934224F02CB6005BB9DD /* UserTableCellViewData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BF780B5924EA684D00B17710 = {
 			isa = PBXGroup;
 			children = (
@@ -129,7 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				BF780B6924EA684D00B17710 /* MainView.swift */,
-				BF780B9C24EA74B900B17710 /* UI */,
+				BF780B9D24EA74E000B17710 /* MainView_UI.swift */,
+				BF780B9C24EA74B900B17710 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,12 +251,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		BF780B9C24EA74B900B17710 /* UI */ = {
+		BF780B9C24EA74B900B17710 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				BF780B9D24EA74E000B17710 /* MainView_UI.swift */,
+				BF75934124F02C72005BB9DD /* Model */,
+				BF75933824F01B07005BB9DD /* View */,
+				BF75933924F01B32005BB9DD /* ViewModel */,
+				BF75933C24F01B74005BB9DD /* Protocols */,
 			);
-			path = UI;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		BF780BA024EA75B900B17710 /* SystemFiles */ = {
@@ -337,15 +384,20 @@
 			files = (
 				BF780B8F24EA6E2C00B17710 /* Locator.swift in Sources */,
 				BF780B6A24EA684D00B17710 /* MainView.swift in Sources */,
+				BF75933B24F01B5B005BB9DD /* UserTableCellViewModel.swift in Sources */,
 				BF780BA324EA7CE900B17710 /* Router.swift in Sources */,
 				BF3AFA9024EA83D00027642D /* MainViewData.swift in Sources */,
+				BF75934024F01FEB005BB9DD /* UserTableCell_UI.swift in Sources */,
 				BF780B9824EA721B00B17710 /* MainViewViewModel.swift in Sources */,
 				BF780B6624EA684D00B17710 /* AppDelegate.swift in Sources */,
 				BF780BA524EA7E4100B17710 /* Assembler.swift in Sources */,
+				BF75933E24F01BB8005BB9DD /* UserTableCellProtocols.swift in Sources */,
 				BF780B9B24EA72E700B17710 /* MainUnitProtocols.swift in Sources */,
+				BF75934324F02CB6005BB9DD /* UserTableCellViewData.swift in Sources */,
 				BF780B9E24EA74E000B17710 /* MainView_UI.swift in Sources */,
 				BF780B6824EA684D00B17710 /* SceneDelegate.swift in Sources */,
 				BF780B9224EA6F2E00B17710 /* NetworkService.swift in Sources */,
+				BF75933724F01AF6005BB9DD /* UserTableCell.swift in Sources */,
 				BF780B9624EA6F8E00B17710 /* StarageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

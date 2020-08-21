@@ -48,4 +48,10 @@ class MainViewViewModel: MainViewViewModelType {
         let user = users[indexPath.row]
         router.pushDetailView(with: user)
     }
+    
+    func provideCellViewModel(for indexPath: IndexPath) -> UserTableCellViewModelType {
+        let user = users[indexPath.row]
+        let model = UserTableCellViewModel(user: user, locator: locator)
+        return model
+    }
 }

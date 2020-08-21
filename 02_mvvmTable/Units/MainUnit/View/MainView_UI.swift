@@ -12,7 +12,7 @@ extension MainView {
     
     func setupUI() {
         title = "Git users"
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGray6
         let item = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(fetchUsers))
         navigationItem.rightBarButtonItem = item
     }
@@ -63,6 +63,7 @@ extension MainView {
         table.delegate = self
         table.dataSource = self
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        table.register(UserTableCell.self, forCellReuseIdentifier: UserTableCell.id)
         return table
     }
     

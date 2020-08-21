@@ -18,4 +18,5 @@ protocol MainViewViewModelType {
     func numberOfRows() -> Int
     func getUsers()
     func tapOnCell(_ indexPath: IndexPath)
+    func provideCellViewModel(for indexPath: IndexPath) -> UserTableCellViewModelType
 }

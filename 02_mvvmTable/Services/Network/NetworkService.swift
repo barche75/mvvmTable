@@ -11,6 +11,7 @@ import Foundation
 protocol NetworkServiceProtocol {
     var token: String { get }
     func getUsers(completion: @escaping (Result<[User], Error>) -> ())
+    func getUserAvatar(from urlString: String, completion: @escaping (Result<Data, Error>) -> ())
 }
 
 class NetworkService: NetworkServiceProtocol {
@@ -43,6 +44,25 @@ class NetworkService: NetworkServiceProtocol {
         } else {
             completion(.failure(NetworkErrors.wrongUrl))
         }
+    }
+    
+    func getUserAvatar(from urlString: String, completion: @escaping (Result<Data, Error>) -> ()) {
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NetworkErrors.wrongUrl))
+            return
+        }
+        
+        let session = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            if let data = data {
+                print(Thread.current)
+                completion(.success(data))
+            }
+        }
+        session.resume()
     }
 }
 
