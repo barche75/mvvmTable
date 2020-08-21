@@ -12,9 +12,11 @@ extension MainView {
     
     func setupUI() {
         title = "Git users"
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = .white
         let item = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(fetchUsers))
         navigationItem.rightBarButtonItem = item
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        tableView.backgroundColor = .white
     }
     
     @objc func fetchUsers() {

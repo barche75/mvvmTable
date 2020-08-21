@@ -39,7 +39,7 @@ extension UserTableCell {
         loginLabel.heightAnchor.constraint(lessThanOrEqualToConstant: 20).isActive = true
         loginLabel.leftAnchor.constraint(equalTo: avatarImageView.rightAnchor, constant: 16).isActive = true
         loginLabel.widthAnchor.constraint(lessThanOrEqualTo: bgView.widthAnchor, constant: -8).isActive = true
-        loginLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        loginLabel.font = UIFont.systemFont(ofSize: 22, weight: .medium)
         
         bgView.addSubview(idLabel)
         idLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +47,7 @@ extension UserTableCell {
         idLabel.heightAnchor.constraint(lessThanOrEqualToConstant: 14).isActive = true
         idLabel.leftAnchor.constraint(lessThanOrEqualTo: loginLabel.leftAnchor).isActive = true
         idLabel.widthAnchor.constraint(lessThanOrEqualTo: bgView.widthAnchor, constant: -8).isActive = true
-        idLabel.font = UIFont.systemFont(ofSize: 14, weight: .thin)
+        idLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     }
     
     func showContent() {
@@ -73,7 +73,7 @@ extension UserTableCell {
             let image = viewData.image
             avatarImageView.image = image
             loginLabel.text = viewData.login
-            idLabel.text = "ID \(viewData.id)"
+            idLabel.text = "ID: \(viewData.id)"
         }
     }
 }

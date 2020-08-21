@@ -32,11 +32,11 @@ class MainView: UIViewController {
             guard let self = self else { return }
             self.viewData = viewData
         }
+        setupUI()
     }
     
     override func viewWillLayoutSubviews() {
         showContent()
-        setupUI()
     }
     
 }

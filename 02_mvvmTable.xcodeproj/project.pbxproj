@@ -13,6 +13,13 @@
 		BF75933E24F01BB8005BB9DD /* UserTableCellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75933D24F01BB8005BB9DD /* UserTableCellProtocols.swift */; };
 		BF75934024F01FEB005BB9DD /* UserTableCell_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75933F24F01FEB005BB9DD /* UserTableCell_UI.swift */; };
 		BF75934324F02CB6005BB9DD /* UserTableCellViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75934224F02CB6005BB9DD /* UserTableCellViewData.swift */; };
+		BF75934524F0508E005BB9DD /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75934424F0508E005BB9DD /* RouterProtocol.swift */; };
+		BF75934724F050BA005BB9DD /* AssemblerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75934624F050BA005BB9DD /* AssemblerProtocol.swift */; };
+		BF75934D24F051FC005BB9DD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75934C24F051FC005BB9DD /* DetailView.swift */; };
+		BF75934F24F05226005BB9DD /* DetailViewViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75934E24F05226005BB9DD /* DetailViewViewData.swift */; };
+		BF75935124F05239005BB9DD /* DatailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75935024F05239005BB9DD /* DatailViewViewModel.swift */; };
+		BF75935424F05278005BB9DD /* DetailUnitProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75935324F05278005BB9DD /* DetailUnitProtocol.swift */; };
+		BF75935624F05667005BB9DD /* DetailView_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75935524F05667005BB9DD /* DetailView_UI.swift */; };
 		BF780B6624EA684D00B17710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF780B6524EA684D00B17710 /* AppDelegate.swift */; };
 		BF780B6824EA684D00B17710 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF780B6724EA684D00B17710 /* SceneDelegate.swift */; };
 		BF780B6A24EA684D00B17710 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF780B6924EA684D00B17710 /* MainView.swift */; };
@@ -46,6 +53,13 @@
 		BF75933D24F01BB8005BB9DD /* UserTableCellProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableCellProtocols.swift; sourceTree = "<group>"; };
 		BF75933F24F01FEB005BB9DD /* UserTableCell_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableCell_UI.swift; sourceTree = "<group>"; };
 		BF75934224F02CB6005BB9DD /* UserTableCellViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableCellViewData.swift; sourceTree = "<group>"; };
+		BF75934424F0508E005BB9DD /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		BF75934624F050BA005BB9DD /* AssemblerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblerProtocol.swift; sourceTree = "<group>"; };
+		BF75934C24F051FC005BB9DD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		BF75934E24F05226005BB9DD /* DetailViewViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewViewData.swift; sourceTree = "<group>"; };
+		BF75935024F05239005BB9DD /* DatailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatailViewViewModel.swift; sourceTree = "<group>"; };
+		BF75935324F05278005BB9DD /* DetailUnitProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUnitProtocol.swift; sourceTree = "<group>"; };
+		BF75935524F05667005BB9DD /* DetailView_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView_UI.swift; sourceTree = "<group>"; };
 		BF780B6224EA684D00B17710 /* 02_mvvmTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 02_mvvmTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF780B6524EA684D00B17710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF780B6724EA684D00B17710 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +131,50 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BF75934824F0518A005BB9DD /* DetailUnit */ = {
+			isa = PBXGroup;
+			children = (
+				BF75934924F051AB005BB9DD /* Model */,
+				BF75934B24F051C5005BB9DD /* View */,
+				BF75934A24F051B7005BB9DD /* ViewModel */,
+				BF75935224F0524D005BB9DD /* Protocols */,
+			);
+			path = DetailUnit;
+			sourceTree = "<group>";
+		};
+		BF75934924F051AB005BB9DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF75934E24F05226005BB9DD /* DetailViewViewData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF75934A24F051B7005BB9DD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BF75935024F05239005BB9DD /* DatailViewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BF75934B24F051C5005BB9DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF75934C24F051FC005BB9DD /* DetailView.swift */,
+				BF75935524F05667005BB9DD /* DetailView_UI.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF75935224F0524D005BB9DD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BF75935324F05278005BB9DD /* DetailUnitProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		BF780B5924EA684D00B17710 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +222,7 @@
 				BF780B8824EA699F00B17710 /* View */,
 				BF780B8924EA69A700B17710 /* ViewModel */,
 				BF780B9924EA72B800B17710 /* Protocols */,
+				BF780B9C24EA74B900B17710 /* UserCell */,
 			);
 			path = MainUnit;
 			sourceTree = "<group>";
@@ -173,7 +232,6 @@
 			children = (
 				BF780B6924EA684D00B17710 /* MainView.swift */,
 				BF780B9D24EA74E000B17710 /* MainView_UI.swift */,
-				BF780B9C24EA74B900B17710 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				BF780BA224EA7CE900B17710 /* Router.swift */,
+				BF75934424F0508E005BB9DD /* RouterProtocol.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -206,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				BF780BA424EA7E4100B17710 /* Assembler.swift */,
+				BF75934624F050BA005BB9DD /* AssemblerProtocol.swift */,
 			);
 			path = Assembler;
 			sourceTree = "<group>";
@@ -251,7 +311,7 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		BF780B9C24EA74B900B17710 /* Cell */ = {
+		BF780B9C24EA74B900B17710 /* UserCell */ = {
 			isa = PBXGroup;
 			children = (
 				BF75934124F02C72005BB9DD /* Model */,
@@ -259,7 +319,7 @@
 				BF75933924F01B32005BB9DD /* ViewModel */,
 				BF75933C24F01B74005BB9DD /* Protocols */,
 			);
-			path = Cell;
+			path = UserCell;
 			sourceTree = "<group>";
 		};
 		BF780BA024EA75B900B17710 /* SystemFiles */ = {
@@ -278,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				BF780B8724EA697800B17710 /* MainUnit */,
+				BF75934824F0518A005BB9DD /* DetailUnit */,
 			);
 			path = Units;
 			sourceTree = "<group>";
@@ -382,22 +443,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF75934524F0508E005BB9DD /* RouterProtocol.swift in Sources */,
 				BF780B8F24EA6E2C00B17710 /* Locator.swift in Sources */,
+				BF75934F24F05226005BB9DD /* DetailViewViewData.swift in Sources */,
 				BF780B6A24EA684D00B17710 /* MainView.swift in Sources */,
 				BF75933B24F01B5B005BB9DD /* UserTableCellViewModel.swift in Sources */,
 				BF780BA324EA7CE900B17710 /* Router.swift in Sources */,
 				BF3AFA9024EA83D00027642D /* MainViewData.swift in Sources */,
+				BF75935424F05278005BB9DD /* DetailUnitProtocol.swift in Sources */,
 				BF75934024F01FEB005BB9DD /* UserTableCell_UI.swift in Sources */,
 				BF780B9824EA721B00B17710 /* MainViewViewModel.swift in Sources */,
 				BF780B6624EA684D00B17710 /* AppDelegate.swift in Sources */,
+				BF75935124F05239005BB9DD /* DatailViewViewModel.swift in Sources */,
 				BF780BA524EA7E4100B17710 /* Assembler.swift in Sources */,
 				BF75933E24F01BB8005BB9DD /* UserTableCellProtocols.swift in Sources */,
 				BF780B9B24EA72E700B17710 /* MainUnitProtocols.swift in Sources */,
 				BF75934324F02CB6005BB9DD /* UserTableCellViewData.swift in Sources */,
+				BF75934D24F051FC005BB9DD /* DetailView.swift in Sources */,
+				BF75935624F05667005BB9DD /* DetailView_UI.swift in Sources */,
 				BF780B9E24EA74E000B17710 /* MainView_UI.swift in Sources */,
 				BF780B6824EA684D00B17710 /* SceneDelegate.swift in Sources */,
 				BF780B9224EA6F2E00B17710 /* NetworkService.swift in Sources */,
 				BF75933724F01AF6005BB9DD /* UserTableCell.swift in Sources */,
+				BF75934724F050BA005BB9DD /* AssemblerProtocol.swift in Sources */,
 				BF780B9624EA6F8E00B17710 /* StarageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,18 +8,7 @@
 
 import UIKit
 
-protocol RouterProtocol {
-    var navigationController: UINavigationController? { get set }
-    var assembler: AssemblerProtocol? { get set }
-    
-    func initialView()
-    func pushDetailView(with state: Any?)
-    func popToRoot()
-}
-
 class Router: RouterProtocol {
-    
-    
     var navigationController: UINavigationController?
     var assembler: AssemblerProtocol?
     
@@ -28,6 +17,7 @@ class Router: RouterProtocol {
         self.assembler = assembler
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.tintColor = .systemGreen
         self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
     }
     

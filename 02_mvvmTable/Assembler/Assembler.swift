@@ -8,14 +8,7 @@
 
 import UIKit
 
-protocol AssemblerProtocol {
-    var locator: LocatorProtocol { get set }
-    func mainView(router: RouterProtocol) -> UIViewController
-    func detailView(state: Any?, router: RouterProtocol) -> UIViewController
-}
-
 class Assembler: AssemblerProtocol {
-    
     var locator: LocatorProtocol
     
     init() {
@@ -32,6 +25,7 @@ class Assembler: AssemblerProtocol {
     }
     
     func detailView(state: Any?, router: RouterProtocol) -> UIViewController {
-        return UIViewController()
+        let view = DetailView()
+        return view
     }
 }
