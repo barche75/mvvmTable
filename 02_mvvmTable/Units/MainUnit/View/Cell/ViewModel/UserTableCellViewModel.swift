@@ -19,7 +19,7 @@ class UserTableCellViewModel: UserTableCellViewModelType {
         self.locator = locator
     }
     
-    func stupCellContent() {
+    func setupCellContent() {
         let imageDefault = UIImage(systemName: "person.crop.circle.badge.xmark")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal) ?? UIImage()
         userTableCellViewData?(.loading(UserTableCellViewData.DataModel(image: imageDefault, login: "loading...", id: "loading...")))
         

@@ -12,5 +12,5 @@ protocol UserTableCellViewModelType {
     var userTableCellViewData: ((UserTableCellViewData) -> ())? { get set }
     var user: User { get set }
     init(user: User, locator: LocatorProtocol)
-    func stupCellContent()
+    func setupCellContent()
 }

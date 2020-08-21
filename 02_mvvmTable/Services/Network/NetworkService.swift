@@ -58,7 +58,6 @@ class NetworkService: NetworkServiceProtocol {
                 return
             }
             if let data = data {
-                print(Thread.current)
                 completion(.success(data))
             }
         }

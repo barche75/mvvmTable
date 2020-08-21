@@ -36,7 +36,7 @@ class UserTableCell: UITableViewCell {
         }
         setupUI()
         showContent()
-        vm.stupCellContent()
+        vm.setupCellContent()
     }
     
     override func prepareForReuse() {
