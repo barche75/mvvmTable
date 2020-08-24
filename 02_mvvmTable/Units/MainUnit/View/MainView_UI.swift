@@ -73,7 +73,7 @@ extension MainView {
         let label = UILabel(frame: .zero)
         view.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 8).isActive = true
+        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         label.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -32).isActive = true
         label.textAlignment = .center
@@ -86,7 +86,7 @@ extension MainView {
         let label = UILabel(frame: .zero)
         view.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.topAnchor.constraint(equalToSystemSpacingBelow: labelTitle.bottomAnchor, multiplier: 2).isActive = true
+        label.topAnchor.constraint(equalToSystemSpacingBelow: labelTitle.bottomAnchor, multiplier: 1).isActive = true
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         label.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -32).isActive = true
         label.textAlignment = .center
@@ -99,8 +99,8 @@ extension MainView {
         let ai = UIActivityIndicatorView(style: .medium)
         view.addSubview(ai)
         ai.translatesAutoresizingMaskIntoConstraints = false
+        ai.topAnchor.constraint(equalToSystemSpacingBelow: labelDescription.bottomAnchor, multiplier: 1).isActive = true
         ai.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        ai.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         ai.hidesWhenStopped = true
         return ai
     }

@@ -20,7 +20,7 @@ class UserTableCellViewModel: UserTableCellViewModelType {
     }
     
     func setupCellContent() {
-        let imageDefault = UIImage(systemName: "person.crop.circle.badge.xmark")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal) ?? UIImage()
+        let imageDefault = UIImage(systemName: "person.crop.circle.fill")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal) ?? UIImage()
         userTableCellViewData?(.loading(UserTableCellViewData.DataModel(image: imageDefault, login: "loading...", id: "loading...")))
         
         let id = user.id ?? 0 > 0 ? "\(user.id!)" : "no ID"
@@ -29,8 +29,8 @@ class UserTableCellViewModel: UserTableCellViewModelType {
         if let urlString = user.avatarUrl {
             locator.network.getUserAvatar(from: urlString) { [weak self] result in
                 guard let self = self else { return }
-                
                 var image: UIImage?
+                
                 switch result {
                 case .success(let data):
                     image = UIImage(data: data)
@@ -50,6 +50,3 @@ class UserTableCellViewModel: UserTableCellViewModelType {
         }
     }
 }
-
-
-//mainViewData?(.loading(MainViewData.DataModel(title: "Loading", description: "please wait")))
