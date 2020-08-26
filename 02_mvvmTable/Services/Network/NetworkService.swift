@@ -1,5 +1,5 @@
 //
-//  NetworkServese.swift
+//  NetworkService.swift
 //  02_mvvmTable
 //
 //  Created by Евгений Коузов on 17.08.2020.
