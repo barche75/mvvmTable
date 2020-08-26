@@ -11,5 +11,5 @@ import UIKit
 protocol AssemblerProtocol {
     var locator: LocatorProtocol { get set }
     func mainView(router: RouterProtocol) -> UIViewController
-    func detailView(state: Any?, router: RouterProtocol) -> UIViewController
+    func detailView(user: User, router: RouterProtocol) -> UIViewController
 }

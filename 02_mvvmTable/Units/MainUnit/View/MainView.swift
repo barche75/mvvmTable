@@ -10,10 +10,10 @@ import UIKit
 
 class MainView: UIViewController {
     
-    lazy var tableView = makeTableView()
-    lazy var labelTitle = makeLabelTitle()
-    lazy var labelDescription = makeLabelDescription()
-    lazy var activityIndicator = makeActivityIndicator()
+    var tableView = UITableView(frame: .zero)
+    var labelTitle = UILabel(frame: .zero)
+    var labelDescription = UILabel(frame: .zero)
+    var activityIndicator = UIActivityIndicatorView(frame: .zero)
     
     var vm: MainViewViewModelType!
     

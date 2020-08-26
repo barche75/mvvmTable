@@ -17,7 +17,7 @@ class Router: RouterProtocol {
         self.assembler = assembler
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.tintColor = .systemGreen
+        self.navigationController?.navigationBar.tintColor = .systemPink
         self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
     }
     
@@ -27,9 +27,9 @@ class Router: RouterProtocol {
         navigationController.viewControllers = [mainView]
     }
     
-    func pushDetailView(with state: Any?) {
+    func pushDetailView(with user: User) {
         guard let navigationController = navigationController else { return }
-        guard let detailView = assembler?.detailView(state: state, router: self) else { return }
+        guard let detailView = assembler?.detailView(user: user, router: self) else { return }
         navigationController.pushViewController(detailView, animated: true)
     }
     

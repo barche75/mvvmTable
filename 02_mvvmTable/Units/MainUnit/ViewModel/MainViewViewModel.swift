@@ -29,8 +29,8 @@ class MainViewViewModel: MainViewViewModelType {
     
     func getUsers() {
         users = []
-        mainViewData?(.loading(MainViewData.DataModel(title: "Loading", description: "please wait")))
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+        mainViewData?(.loading(MainViewData.DataModel(title: "Loading", description: "please wait...")))
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1) { // 1 чтоб было видно состояние загрузки
             self.locator.network.getUsers { [weak self] result in
                 guard let self = self else { return }
                 switch result {
@@ -38,7 +38,7 @@ class MainViewViewModel: MainViewViewModelType {
                     self.users = fetchedUsers
                     self.mainViewData?(.success)
                 case .failure:
-                    self.mainViewData?(.failure(MainViewData.DataModel(title: "Warning", description: "error")))
+                    self.mainViewData?(.failure(MainViewData.DataModel(title: "Warning", description: "something went wrong...")))
                 }
             }
         }

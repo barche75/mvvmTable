@@ -8,10 +8,12 @@
 
 import Foundation
 
-protocol StorageServiceProtocol {
-    
-}
-
 class StorageService: StorageServiceProtocol {
+    func saveUsers(_ users: [User]?) {
+        
+    }
     
+    func fetchUsers() -> [User] {
+        return []
+    }
 }

@@ -32,11 +32,13 @@ extension UserTableCell {
         avatarImageView.layer.masksToBounds = true
         avatarImageView.backgroundColor = .white
         avatarImageView.contentMode = .scaleAspectFit
+        avatarImageView.layer.borderColor = UIColor.darkGray.cgColor
+        avatarImageView.layer.borderWidth = 2
         
         bgView.addSubview(loginLabel)
         loginLabel.translatesAutoresizingMaskIntoConstraints = false
         loginLabel.bottomAnchor.constraint(equalTo: bgView.centerYAnchor, constant: -8).isActive = true
-        loginLabel.heightAnchor.constraint(lessThanOrEqualToConstant: 20).isActive = true
+        loginLabel.heightAnchor.constraint(lessThanOrEqualToConstant: 30).isActive = true
         loginLabel.leftAnchor.constraint(equalTo: avatarImageView.rightAnchor, constant: 16).isActive = true
         loginLabel.widthAnchor.constraint(lessThanOrEqualTo: bgView.widthAnchor, constant: -8).isActive = true
         loginLabel.font = UIFont.systemFont(ofSize: 22, weight: .medium)
@@ -44,7 +46,7 @@ extension UserTableCell {
         bgView.addSubview(idLabel)
         idLabel.translatesAutoresizingMaskIntoConstraints = false
         idLabel.topAnchor.constraint(equalTo: bgView.centerYAnchor, constant: 8).isActive = true
-        idLabel.heightAnchor.constraint(lessThanOrEqualToConstant: 14).isActive = true
+        idLabel.heightAnchor.constraint(lessThanOrEqualToConstant: 20).isActive = true
         idLabel.leftAnchor.constraint(lessThanOrEqualTo: loginLabel.leftAnchor).isActive = true
         idLabel.widthAnchor.constraint(lessThanOrEqualTo: bgView.widthAnchor, constant: -8).isActive = true
         idLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)

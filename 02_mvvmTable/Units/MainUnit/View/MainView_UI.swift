@@ -17,6 +17,42 @@ extension MainView {
         navigationItem.rightBarButtonItem = item
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         tableView.backgroundColor = .white
+        
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        tableView.separatorStyle = .none
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UserTableCell.self, forCellReuseIdentifier: UserTableCell.id)
+        
+        view.addSubview(labelTitle)
+        labelTitle.translatesAutoresizingMaskIntoConstraints = false
+        labelTitle.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        labelTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        labelTitle.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -32).isActive = true
+        labelTitle.textAlignment = .center
+        labelTitle.numberOfLines = 1
+        labelTitle.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        
+        view.addSubview(labelDescription)
+        labelDescription.translatesAutoresizingMaskIntoConstraints = false
+        labelDescription.topAnchor.constraint(equalToSystemSpacingBelow: labelTitle.bottomAnchor, multiplier: 1).isActive = true
+        labelDescription.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        labelDescription.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -32).isActive = true
+        labelDescription.textAlignment = .center
+        labelDescription.numberOfLines = 0
+        labelDescription.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.style = .medium
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.topAnchor.constraint(equalToSystemSpacingBelow: labelDescription.bottomAnchor, multiplier: 1).isActive = true
+        activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        activityIndicator.hidesWhenStopped = true
     }
     
     @objc func fetchUsers() {
@@ -52,57 +88,4 @@ extension MainView {
             tableView.reloadData()
         }
     }
-    
-    func makeTableView() -> UITableView {
-        let table = UITableView(frame: .zero)
-        view.addSubview(table)
-        table.translatesAutoresizingMaskIntoConstraints = false
-        table.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        table.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        table.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        table.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        table.separatorStyle = .none
-        table.delegate = self
-        table.dataSource = self
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        table.register(UserTableCell.self, forCellReuseIdentifier: UserTableCell.id)
-        return table
-    }
-    
-    func makeLabelTitle() -> UILabel {
-        let label = UILabel(frame: .zero)
-        view.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        label.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -32).isActive = true
-        label.textAlignment = .center
-        label.numberOfLines = 1
-        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        return label
-    }
-    
-    func makeLabelDescription() -> UILabel {
-        let label = UILabel(frame: .zero)
-        view.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.topAnchor.constraint(equalToSystemSpacingBelow: labelTitle.bottomAnchor, multiplier: 1).isActive = true
-        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        label.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -32).isActive = true
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        return label
-    }
-    
-    func makeActivityIndicator() -> UIActivityIndicatorView {
-        let ai = UIActivityIndicatorView(style: .medium)
-        view.addSubview(ai)
-        ai.translatesAutoresizingMaskIntoConstraints = false
-        ai.topAnchor.constraint(equalToSystemSpacingBelow: labelDescription.bottomAnchor, multiplier: 1).isActive = true
-        ai.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        ai.hidesWhenStopped = true
-        return ai
-    }
-    
 }

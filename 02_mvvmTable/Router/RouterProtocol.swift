@@ -13,6 +13,6 @@ protocol RouterProtocol {
     var assembler: AssemblerProtocol? { get set }
     
     func initialView()
-    func pushDetailView(with state: Any?)
+    func pushDetailView(with user: User)
     func popToRoot()
 }

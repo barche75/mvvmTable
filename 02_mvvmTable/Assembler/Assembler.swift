@@ -24,8 +24,10 @@ class Assembler: AssemblerProtocol {
         return view
     }
     
-    func detailView(state: Any?, router: RouterProtocol) -> UIViewController {
+    func detailView(user: User, router: RouterProtocol) -> UIViewController {
         let view = DetailView()
+        let viewModel = DetailViewViewModel(user: user, router: router, locator: locator)
+        view.vm = viewModel
         return view
     }
 }

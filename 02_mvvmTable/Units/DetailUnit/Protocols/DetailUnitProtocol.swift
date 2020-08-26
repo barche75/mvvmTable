@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+
+protocol DetailViewViewModelType {
+    var detailViewData: ((DetailViewData) -> ())? { get set }
+    var router: RouterProtocol { get set }
+    var locator: LocatorProtocol { get set }
+    var user: User { get set }
+    
+    init(user: User, router: RouterProtocol, locator: LocatorProtocol)
+    
+    func getUserBio()
+    func goBack()
+}
